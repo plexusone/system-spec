@@ -1,0 +1,16 @@
+{
+  "name": "analyze-system-spec",
+  "description": "Analyze, validate, and visualize system-spec infrastructure files",
+  "triggers": [
+    "analyze-system-spec",
+    "analyze system",
+    "validate system-spec",
+    "render system"
+  ],
+  "dependencies": [
+    "system-spec"
+  ],
+  "references": [
+    "../../versions/v0.1.0/system.schema.json"
+  ]
+}

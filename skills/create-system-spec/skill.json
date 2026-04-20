@@ -1,0 +1,17 @@
+{
+  "name": "create-system-spec",
+  "description": "Create a system-spec topology file for SaaS infrastructure",
+  "triggers": [
+    "create-system-spec",
+    "system-spec",
+    "create system spec",
+    "infrastructure spec"
+  ],
+  "dependencies": [
+    "system-spec"
+  ],
+  "references": [
+    "../../versions/v0.1.0/system.schema.json",
+    "../../examples/payments-system.json"
+  ]
+}

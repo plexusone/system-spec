@@ -1,0 +1,1281 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/plexusone/system-spec/schema/system",
+  "$ref": "#/$defs/System",
+  "$defs": {
+    "APIGatewayAPI": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "AWSResources": {
+      "properties": {
+        "rds": {
+          "items": {
+            "$ref": "#/$defs/RDSInstance"
+          },
+          "type": "array"
+        },
+        "dynamodb": {
+          "items": {
+            "$ref": "#/$defs/DynamoDBTable"
+          },
+          "type": "array"
+        },
+        "sqs": {
+          "items": {
+            "$ref": "#/$defs/SQSQueue"
+          },
+          "type": "array"
+        },
+        "sns": {
+          "items": {
+            "$ref": "#/$defs/SNSTopic"
+          },
+          "type": "array"
+        },
+        "s3": {
+          "items": {
+            "$ref": "#/$defs/S3Bucket"
+          },
+          "type": "array"
+        },
+        "bedrock": {
+          "items": {
+            "$ref": "#/$defs/BedrockModel"
+          },
+          "type": "array"
+        },
+        "lambda": {
+          "items": {
+            "$ref": "#/$defs/LambdaFunction"
+          },
+          "type": "array"
+        },
+        "elasticache": {
+          "items": {
+            "$ref": "#/$defs/ElastiCacheCluster"
+          },
+          "type": "array"
+        },
+        "kinesis": {
+          "items": {
+            "$ref": "#/$defs/KinesisStream"
+          },
+          "type": "array"
+        },
+        "eventbridge": {
+          "items": {
+            "$ref": "#/$defs/EventBridgeBus"
+          },
+          "type": "array"
+        },
+        "secretsmanager": {
+          "items": {
+            "$ref": "#/$defs/SecretsManagerSecret"
+          },
+          "type": "array"
+        },
+        "apigateway": {
+          "items": {
+            "$ref": "#/$defs/APIGatewayAPI"
+          },
+          "type": "array"
+        },
+        "cloudfront": {
+          "items": {
+            "$ref": "#/$defs/CloudFrontDistribution"
+          },
+          "type": "array"
+        },
+        "vpc": {
+          "type": "string"
+        },
+        "subnets": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "securityGroups": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "AzureFunction": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "runtime": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "AzureKeyVault": {
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "AzureRedisCache": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "port": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "AzureResources": {
+      "properties": {
+        "cosmosdb": {
+          "items": {
+            "$ref": "#/$defs/CosmosDBAccount"
+          },
+          "type": "array"
+        },
+        "servicebus": {
+          "items": {
+            "$ref": "#/$defs/ServiceBusNamespace"
+          },
+          "type": "array"
+        },
+        "blobstorage": {
+          "items": {
+            "$ref": "#/$defs/BlobStorageAccount"
+          },
+          "type": "array"
+        },
+        "functions": {
+          "items": {
+            "$ref": "#/$defs/AzureFunction"
+          },
+          "type": "array"
+        },
+        "rediscache": {
+          "items": {
+            "$ref": "#/$defs/AzureRedisCache"
+          },
+          "type": "array"
+        },
+        "keyvault": {
+          "items": {
+            "$ref": "#/$defs/AzureKeyVault"
+          },
+          "type": "array"
+        },
+        "eventhubs": {
+          "items": {
+            "$ref": "#/$defs/EventHubsNamespace"
+          },
+          "type": "array"
+        },
+        "sqldatabase": {
+          "items": {
+            "$ref": "#/$defs/AzureSQLDatabase"
+          },
+          "type": "array"
+        },
+        "vnet": {
+          "type": "string"
+        },
+        "subnets": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "AzureSQLDatabase": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "server": {
+          "type": "string"
+        },
+        "port": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "BedrockModel": {
+      "properties": {
+        "modelId": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "BigQueryDataset": {
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "BlobStorageAccount": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "containers": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "CassandraCluster": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "contactPoints": {
+          "type": "string"
+        },
+        "port": {
+          "type": "integer"
+        },
+        "keyspace": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "CloudFrontDistribution": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "domain": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "CloudFunction": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "runtime": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "CloudRunService": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "CloudSQLInstance": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "databaseType": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "CloudflareD1": {
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "CloudflareDurableObject": {
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "CloudflareKV": {
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "CloudflareQueue": {
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "CloudflareResources": {
+      "properties": {
+        "zone": {
+          "type": "string"
+        },
+        "workers": {
+          "items": {
+            "$ref": "#/$defs/CloudflareWorker"
+          },
+          "type": "array"
+        },
+        "r2Buckets": {
+          "items": {
+            "$ref": "#/$defs/R2Bucket"
+          },
+          "type": "array"
+        },
+        "kv": {
+          "items": {
+            "$ref": "#/$defs/CloudflareKV"
+          },
+          "type": "array"
+        },
+        "d1": {
+          "items": {
+            "$ref": "#/$defs/CloudflareD1"
+          },
+          "type": "array"
+        },
+        "queues": {
+          "items": {
+            "$ref": "#/$defs/CloudflareQueue"
+          },
+          "type": "array"
+        },
+        "durableObjects": {
+          "items": {
+            "$ref": "#/$defs/CloudflareDurableObject"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "CloudflareWorker": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "route": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "Connection": {
+      "properties": {
+        "port": {
+          "type": "integer"
+        },
+        "protocol": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "ConsulInstance": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "ContainerImage": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "tag": {
+          "type": "string"
+        },
+        "digest": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "CosmosDBAccount": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "api": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "Deployments": {
+      "properties": {
+        "helm": {
+          "additionalProperties": {
+            "$ref": "#/$defs/HelmDeployment"
+          },
+          "type": "object"
+        },
+        "terraform": {
+          "additionalProperties": {
+            "$ref": "#/$defs/TerraformDeployment"
+          },
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "DynamoDBTable": {
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "ElastiCacheCluster": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "engine": {
+          "type": "string"
+        },
+        "port": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "ElasticsearchCluster": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "host": {
+          "type": "string"
+        },
+        "port": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "Endpoint": {
+      "properties": {
+        "port": {
+          "type": "integer"
+        },
+        "protocol": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "EtcdCluster": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "endpoints": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "EventBridgeBus": {
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "EventHubsNamespace": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "hubs": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "FirestoreDatabase": {
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "GCPResources": {
+      "properties": {
+        "cloudsql": {
+          "items": {
+            "$ref": "#/$defs/CloudSQLInstance"
+          },
+          "type": "array"
+        },
+        "pubsub": {
+          "items": {
+            "$ref": "#/$defs/PubSubTopic"
+          },
+          "type": "array"
+        },
+        "gcs": {
+          "items": {
+            "$ref": "#/$defs/GCSBucket"
+          },
+          "type": "array"
+        },
+        "cloudrun": {
+          "items": {
+            "$ref": "#/$defs/CloudRunService"
+          },
+          "type": "array"
+        },
+        "cloudfunctions": {
+          "items": {
+            "$ref": "#/$defs/CloudFunction"
+          },
+          "type": "array"
+        },
+        "memorystore": {
+          "items": {
+            "$ref": "#/$defs/MemorystoreInstance"
+          },
+          "type": "array"
+        },
+        "bigquery": {
+          "items": {
+            "$ref": "#/$defs/BigQueryDataset"
+          },
+          "type": "array"
+        },
+        "secretmanager": {
+          "items": {
+            "$ref": "#/$defs/GCPSecret"
+          },
+          "type": "array"
+        },
+        "firestore": {
+          "items": {
+            "$ref": "#/$defs/FirestoreDatabase"
+          },
+          "type": "array"
+        },
+        "spanner": {
+          "items": {
+            "$ref": "#/$defs/SpannerInstance"
+          },
+          "type": "array"
+        },
+        "vpcNetwork": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "GCPSecret": {
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "GCSBucket": {
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "GenericResources": {
+      "properties": {
+        "redis": {
+          "items": {
+            "$ref": "#/$defs/RedisInstance"
+          },
+          "type": "array"
+        },
+        "kafka": {
+          "items": {
+            "$ref": "#/$defs/KafkaCluster"
+          },
+          "type": "array"
+        },
+        "elasticsearch": {
+          "items": {
+            "$ref": "#/$defs/ElasticsearchCluster"
+          },
+          "type": "array"
+        },
+        "mongodb": {
+          "items": {
+            "$ref": "#/$defs/MongoDBInstance"
+          },
+          "type": "array"
+        },
+        "postgresql": {
+          "items": {
+            "$ref": "#/$defs/PostgreSQLDatabase"
+          },
+          "type": "array"
+        },
+        "mysql": {
+          "items": {
+            "$ref": "#/$defs/MySQLDatabase"
+          },
+          "type": "array"
+        },
+        "rabbitmq": {
+          "items": {
+            "$ref": "#/$defs/RabbitMQInstance"
+          },
+          "type": "array"
+        },
+        "cassandra": {
+          "items": {
+            "$ref": "#/$defs/CassandraCluster"
+          },
+          "type": "array"
+        },
+        "memcached": {
+          "items": {
+            "$ref": "#/$defs/MemcachedInstance"
+          },
+          "type": "array"
+        },
+        "minio": {
+          "items": {
+            "$ref": "#/$defs/MinioInstance"
+          },
+          "type": "array"
+        },
+        "nats": {
+          "items": {
+            "$ref": "#/$defs/NATSServer"
+          },
+          "type": "array"
+        },
+        "etcd": {
+          "items": {
+            "$ref": "#/$defs/EtcdCluster"
+          },
+          "type": "array"
+        },
+        "vault": {
+          "items": {
+            "$ref": "#/$defs/VaultInstance"
+          },
+          "type": "array"
+        },
+        "consul": {
+          "items": {
+            "$ref": "#/$defs/ConsulInstance"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "GitRepo": {
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "ref": {
+          "type": "string"
+        },
+        "commit": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "HelmDeployment": {
+      "properties": {
+        "chart": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "repo": {
+          "type": "string"
+        },
+        "valuesFile": {
+          "type": "string"
+        },
+        "services": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "KafkaCluster": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "bootstrapServers": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "KinesisStream": {
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "LambdaFunction": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "runtime": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "MemcachedInstance": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "host": {
+          "type": "string"
+        },
+        "port": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "MemorystoreInstance": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "port": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "MinioInstance": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "endpoint": {
+          "type": "string"
+        },
+        "buckets": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "MongoDBInstance": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "host": {
+          "type": "string"
+        },
+        "port": {
+          "type": "integer"
+        },
+        "database": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "MySQLDatabase": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "host": {
+          "type": "string"
+        },
+        "port": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "NATSServer": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "Network": {
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "cidr": {
+          "type": "string"
+        },
+        "rules": {
+          "items": {
+            "$ref": "#/$defs/NetworkRule"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "NetworkRule": {
+      "properties": {
+        "direction": {
+          "type": "string"
+        },
+        "fromService": {
+          "type": "string"
+        },
+        "toService": {
+          "type": "string"
+        },
+        "port": {
+          "type": "integer"
+        },
+        "protocol": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "Owner": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "slack": {
+          "type": "string"
+        },
+        "pager": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "PostgreSQLDatabase": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "host": {
+          "type": "string"
+        },
+        "port": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "PubSubTopic": {
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "R2Bucket": {
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "RDSInstance": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "engine": {
+          "type": "string"
+        },
+        "port": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "RabbitMQInstance": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "host": {
+          "type": "string"
+        },
+        "port": {
+          "type": "integer"
+        },
+        "vhost": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "RedisInstance": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "host": {
+          "type": "string"
+        },
+        "port": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "S3Bucket": {
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "SNSTopic": {
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "SQSQueue": {
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "SecretsManagerSecret": {
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "Service": {
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "string"
+        },
+        "repo": {
+          "$ref": "#/$defs/GitRepo"
+        },
+        "image": {
+          "$ref": "#/$defs/ContainerImage"
+        },
+        "registry": {
+          "type": "string"
+        },
+        "envVars": {
+          "$ref": "#/$defs/ServiceEnvVars"
+        },
+        "connections": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Connection"
+          },
+          "type": "object"
+        },
+        "exposes": {
+          "items": {
+            "$ref": "#/$defs/Endpoint"
+          },
+          "type": "array"
+        },
+        "aws": {
+          "$ref": "#/$defs/AWSResources"
+        },
+        "gcp": {
+          "$ref": "#/$defs/GCPResources"
+        },
+        "azure": {
+          "$ref": "#/$defs/AzureResources"
+        },
+        "cloudflare": {
+          "$ref": "#/$defs/CloudflareResources"
+        },
+        "resources": {
+          "$ref": "#/$defs/GenericResources"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "ServiceBusNamespace": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "queues": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "topics": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "ServiceEnvVars": {
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "host": {
+          "type": "string"
+        },
+        "port": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "SpannerInstance": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "database": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "System": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "owners": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Owner"
+          },
+          "type": "object"
+        },
+        "services": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Service"
+          },
+          "type": "object"
+        },
+        "networks": {
+          "additionalProperties": {
+            "$ref": "#/$defs/Network"
+          },
+          "type": "object"
+        },
+        "deployments": {
+          "$ref": "#/$defs/Deployments"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "TerraformDeployment": {
+      "properties": {
+        "source": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "resources": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "VaultInstance": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    }
+  },
+  "title": "System Specification",
+  "description": "A system topology specification including services, infrastructure, and connectivity."
+}

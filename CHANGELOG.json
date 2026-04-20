@@ -1,0 +1,38 @@
+{
+  "irVersion": "1.0",
+  "project": "system-spec",
+  "repository": "https://github.com/plexusone/system-spec",
+  "versioning": "semver",
+  "commitConvention": "conventional",
+  "releases": [
+    {
+      "version": "v0.1.0",
+      "date": "2026-04-15",
+      "highlights": [
+        { "description": "Initial release of system-spec: a Go-native system topology specification" },
+        { "description": "Multi-format rendering: D2, Mermaid, Cytoscape.js, Sigma.js, GraphViz DOT" }
+      ],
+      "added": [
+        { "description": "Core spec types: System, Service, GitRepo, ContainerImage" },
+        { "description": "AWS resource bindings: RDS, DynamoDB, SQS, SNS, S3, Bedrock" },
+        { "description": "GCP resource bindings: CloudSQL, PubSub, GCS" },
+        { "description": "Cloudflare resource bindings: Workers, R2" },
+        { "description": "Service connectivity modeling with protocol and port" },
+        { "description": "Deployment mappings for Helm charts and Terraform modules" },
+        { "description": "Graph intermediate representation for rendering" },
+        { "description": "D2 renderer with styled node shapes" },
+        { "description": "Mermaid renderer with provider subgraphs" },
+        { "description": "Cytoscape.js JSON renderer for web visualization" },
+        { "description": "Sigma.js JSON renderer optimized for large graphs" },
+        { "description": "GraphViz DOT renderer" },
+        { "description": "JSON Schema generation from Go types" },
+        { "description": "CLI tool: validate, render, schema, graph commands" },
+        { "description": "Graphize provider for integrating with code graph databases" }
+      ],
+      "documentation": [
+        { "description": "Specification document v0.1.0 with full type definitions" },
+        { "description": "Example payments-system.json demonstrating all features" }
+      ]
+    }
+  ]
+}

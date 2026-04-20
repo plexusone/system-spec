@@ -32,11 +32,11 @@ A Go-native system topology specification for modeling microservices, infrastruc
 
 ## Features
 
-- **Strongly-typed** - Go structs are source of truth; no `interface{}` or `any`
-- **JSON-first** - JSON format with generated JSON Schema
-- **Graph-aware** - Services as nodes, connections as edges
-- **Multi-cloud** - AWS, GCP, and Cloudflare resource bindings
-- **Multi-render** - D2, Mermaid, Cytoscape.js, Sigma.js, GraphViz
+- 🔒 **Strongly-typed** - Go structs are source of truth; no `interface{}` or `any`
+- 📄 **JSON-first** - JSON format with generated JSON Schema
+- 🔗 **Graph-aware** - Services as nodes, connections as edges
+- ☁️ **Multi-cloud** - AWS, GCP, and Cloudflare resource bindings
+- 🎨 **Multi-render** - D2, Mermaid, Cytoscape.js, Sigma.js, GraphViz
 
 ## Installation
 

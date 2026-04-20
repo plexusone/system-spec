@@ -34,19 +34,19 @@ type Node struct {
 type NodeKind string
 
 const (
-	NodeKindService    NodeKind = "service"
-	NodeKindDatabase   NodeKind = "database"
-	NodeKindQueue      NodeKind = "queue"
-	NodeKindTopic      NodeKind = "topic"
-	NodeKindStorage    NodeKind = "storage"
-	NodeKindCDN        NodeKind = "cdn"
-	NodeKindWorker     NodeKind = "worker"
-	NodeKindAIModel    NodeKind = "ai_model"
-	NodeKindVPC        NodeKind = "vpc"
-	NodeKindSubnet     NodeKind = "subnet"
-	NodeKindExternal   NodeKind = "external"
-	NodeKindHelm       NodeKind = "helm"
-	NodeKindTerraform  NodeKind = "terraform"
+	NodeKindService   NodeKind = "service"
+	NodeKindDatabase  NodeKind = "database"
+	NodeKindQueue     NodeKind = "queue"
+	NodeKindTopic     NodeKind = "topic"
+	NodeKindStorage   NodeKind = "storage"
+	NodeKindCDN       NodeKind = "cdn"
+	NodeKindWorker    NodeKind = "worker"
+	NodeKindAIModel   NodeKind = "ai_model"
+	NodeKindVPC       NodeKind = "vpc"
+	NodeKindSubnet    NodeKind = "subnet"
+	NodeKindExternal  NodeKind = "external"
+	NodeKindHelm      NodeKind = "helm"
+	NodeKindTerraform NodeKind = "terraform"
 )
 
 // Edge represents a directed edge between nodes.
@@ -80,11 +80,11 @@ type Edge struct {
 type EdgeKind string
 
 const (
-	EdgeKindConnection EdgeKind = "connection"   // service to service
-	EdgeKindDatabase   EdgeKind = "database"     // service to database
-	EdgeKindQueue      EdgeKind = "queue"        // service to queue
-	EdgeKindStorage    EdgeKind = "storage"      // service to storage
-	EdgeKindDeploys    EdgeKind = "deploys"      // helm/terraform to service
+	EdgeKindConnection EdgeKind = "connection" // service to service
+	EdgeKindDatabase   EdgeKind = "database"   // service to database
+	EdgeKindQueue      EdgeKind = "queue"      // service to queue
+	EdgeKindStorage    EdgeKind = "storage"    // service to storage
+	EdgeKindDeploys    EdgeKind = "deploys"    // helm/terraform to service
 )
 
 // NewGraph creates an empty graph.

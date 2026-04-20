@@ -50,15 +50,15 @@ type SigmaNode struct {
 
 // SigmaEdge represents an edge in Sigma format.
 type SigmaEdge struct {
-	ID       string `json:"id"`
-	Source   string `json:"source"`
-	Target   string `json:"target"`
-	Label    string `json:"label,omitempty"`
+	ID       string  `json:"id"`
+	Source   string  `json:"source"`
+	Target   string  `json:"target"`
+	Label    string  `json:"label,omitempty"`
 	Size     float64 `json:"size"`
-	Color    string `json:"color"`
-	Kind     string `json:"kind"`
-	Protocol string `json:"protocol,omitempty"`
-	Port     int    `json:"port,omitempty"`
+	Color    string  `json:"color"`
+	Kind     string  `json:"kind"`
+	Protocol string  `json:"protocol,omitempty"`
+	Port     int     `json:"port,omitempty"`
 }
 
 // Render converts the graph to Sigma.js JSON.
